@@ -13,14 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-<<<<<<< HEAD
-      designSize: Size(360, 690),
-
-      builder: (content, child) => GetMaterialApp(
-=======
       designSize: Size(360, 690), //핸드폰 디폴트 사이즈 지정
       builder: (content, child) => GetMaterialApp( //get방식의 상태 변화를 주고싶을때 사용
->>>>>>> 432bf659cf2227209dae03ba27fe57bcc77a7f93
         debugShowCheckedModeBanner: false,
         home: OrientationBuilder( //회전가능하게 하는 기능
           builder: (context, orientation) {
