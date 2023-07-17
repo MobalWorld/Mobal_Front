@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
         home: OrientationBuilder( //회전가능하게 하는 기능
           builder: (context, orientation) {
             // return storagebox(); //보관함으로 이동
-            // return grouptselect(); //살짝메인-그룹 리스트로 이동
-            return toungpage(); //텅 페이지로 이동
+             return grouptselect(); //살짝메인-그룹 리스트로 이동
+            // return toungpage(); //텅 페이지로 이동
           },
         ),
       ),
