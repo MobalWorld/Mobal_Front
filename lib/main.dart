@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: Size(360, 690),
+
       builder: (content, child) => GetMaterialApp(
         debugShowCheckedModeBanner: false,
         home: OrientationBuilder(
