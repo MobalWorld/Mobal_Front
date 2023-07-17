@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/UI/Toung.dart';
 import 'package:flutter_application_3/UI/storagebox_btn.dart';
 import 'package:flutter_application_3/login/login.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -47,6 +48,12 @@ class MasterKey extends StatelessWidget {
                     'storagebox',
                   ),
                 ),
+                DropdownMenuItem(
+                  value: 'toung',
+                  child: Text(
+                    'Toung',
+                  ),
+                ),
               ],
               onChanged: (String? value) {
                 if (value == 'joinmake') {
@@ -68,6 +75,9 @@ class MasterKey extends StatelessWidget {
                 } else if (value == 'login') {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => LoginPage()));
+                } else if (value == 'toung') {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => toungpage()));
                 }
               },
             ),

@@ -6,6 +6,7 @@
 // final beige = Color(0xffFFF8E8);
 // final darkTextColor = Color(0xff1F1A3D);
 
+// 버튼이랑 기본적인 ui틀들 정리할 예정인데 백앤드랑 상의해보고 결정
 
 // //보관함 버튼
 // Widget getButton({required String hint}) {
