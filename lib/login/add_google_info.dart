@@ -3,9 +3,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mobalworld/home/home.dart';
+import 'package:flutter_application_3/UI/master_key.dart';
 import 'package:provider/provider.dart';
 
+
+import '../home/home.dart';
 import '../main.dart';
 
 class GoogleAdditionalPage extends StatefulWidget {
@@ -540,6 +542,7 @@ class _GoogleAdditionalPageState extends State<GoogleAdditionalPage> {
 
                     SizedBox(height: 76.0),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
                           alignment: Alignment.center,
@@ -549,13 +552,12 @@ class _GoogleAdditionalPageState extends State<GoogleAdditionalPage> {
                               style: TextStyle(
                                   fontFamily: 'gangwon',
                                   color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 22
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 22,
                               ),
                             ),
                             style: ElevatedButton.styleFrom(
                               primary: Color(0xFFE6CCAD),
-                              minimumSize: const Size(360, 45),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12), // 버튼의 모서리를 둥글게 설정
                               ),
@@ -583,6 +585,7 @@ class _GoogleAdditionalPageState extends State<GoogleAdditionalPage> {
 
                       ],
                     ),
+                    MasterKey(margin: 270)
                   ],
                 ),
               ),

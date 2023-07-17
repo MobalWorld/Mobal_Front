@@ -2,14 +2,17 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/UI/storagebox_btn.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:mobalworld/login/add_google_info.dart';
-import 'package:mobalworld/src/ui/main_loading.dart';
 import 'package:provider/provider.dart';
 
+import '../UI/join_make_page.dart';
+import '../UI/main_loading.dart';
+import '../UI/master_key.dart';
 import '../home/home.dart';
 import '../main.dart';
-import '../src/ui/join_make_page.dart';
+import 'add_google_info.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -159,40 +162,7 @@ class _LoginPageState extends State<LoginPage> {
                 },
               ),
             ),
-            DropdownButton<String>(
-              hint: Text('페이지 이동'),
-              items: [
-                DropdownMenuItem(
-                  value: 'joinmake',
-                  child: Text('JoinMake'),
-                ),
-                DropdownMenuItem(
-                  value: 'loading',
-                  child: Text(
-                    'loading',
-                  ),
-                ),
-                DropdownMenuItem(
-                  value: 'info',
-                  child: Text(
-                    'add_info',
-                  ),
-                )
-              ],
-              onChanged: (String? value) {
-                if (value == 'joinmake') {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => JoinMakePage()));
-                } else if (value == 'loading') {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LoadingPage()));
-                }  else if (value == 'info') {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => GoogleAdditionalPage()));
-                }
-              },
-            ),
-
+            MasterKey(margin: 350)
           ],
         ),
       ),

@@ -1,4 +1,3 @@
-
 // 민영이가 만든 클래스 -> 보관함 페이지
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,16 +5,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import '../second.dart';
+import 'master_key.dart';
 
-class storagebox extends StatefulWidget {
-  const storagebox ({Key? key}) : super(key: key);
+class Storagebox extends StatefulWidget {
+  const Storagebox({Key? key}) : super(key: key);
 
   @override
-  State<storagebox> createState() => _storageboxState();
+  State<Storagebox> createState() => _StorageboxState();
 }
 
-class _storageboxState extends State<storagebox> {
+class _StorageboxState extends State<Storagebox> {
   // final beige = Color(0xffFFF8E8);
   // FCCAA9
   final beige = Color(0xff96B0E5);
@@ -31,13 +30,12 @@ class _storageboxState extends State<storagebox> {
       height: Getheight(0.02.sh),
       child: ElevatedButton(
         onPressed: () {
-          Get.to(Second());
         },
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(beige),
           foregroundColor: MaterialStateProperty.all(Colors.black),
           padding: //패딩
-          MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 14.h)),
+              MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 14.h)),
           textStyle: MaterialStateProperty.all(TextStyle(
             fontSize: FontSize(15.sp),
             fontWeight: FontWeight.w700,
@@ -49,7 +47,7 @@ class _storageboxState extends State<storagebox> {
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius:
-              BorderRadius.circular(100.0), // 원하는 모서리의 둥근 정도를 조정하세요
+                  BorderRadius.circular(100.0), // 원하는 모서리의 둥근 정도를 조정하세요
             ),
           ),
         ),
@@ -75,6 +73,7 @@ class _storageboxState extends State<storagebox> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.white,
@@ -89,9 +88,10 @@ class _storageboxState extends State<storagebox> {
           elevation: 0.0,
         ),
         body: SafeArea(
+
           child: SingleChildScrollView(
             padding:
-            EdgeInsets.symmetric(horizontal: 0.03.sh, vertical: 0.02.sh),
+                EdgeInsets.symmetric(horizontal: 0.03.sh, vertical: 0.02.sh),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -123,8 +123,10 @@ class _storageboxState extends State<storagebox> {
                   height: 0.03.sh,
                 ),
                 getButton(hint: "임시 보관함"),
+                MasterKey(margin: 50)
               ],
             ),
+
           ),
         ));
   }

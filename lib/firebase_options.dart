@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBB8bN2fhugKeuTZRBNXp81x9FFIkGWqAs',
-    appId: '1:53239051223:android:a11cc09ff21287986dd192',
+    appId: '1:53239051223:android:68118880d83594096dd192',
     messagingSenderId: '53239051223',
     projectId: 'mobalworld',
     storageBucket: 'mobalworld.appspot.com',
@@ -63,23 +63,23 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyA7X5jqv0OpU0d8q9VztCWXuWgf2XOt6Dg',
-    appId: '1:53239051223:ios:6ab7ab503377408e6dd192',
+    appId: '1:53239051223:ios:7c4ac599730540756dd192',
     messagingSenderId: '53239051223',
     projectId: 'mobalworld',
     storageBucket: 'mobalworld.appspot.com',
     androidClientId: '53239051223-1d6fmgs9344st4ca8svdugl00uukjou7.apps.googleusercontent.com',
-    iosClientId: '53239051223-vgjah3p8p4eh9ijsj2sfrk5ivmkabnoj.apps.googleusercontent.com',
-    iosBundleId: 'com.example.mobalworld',
+    iosClientId: '53239051223-p3mllqhgpnph3pg4ehbdqn4t9itl5lml.apps.googleusercontent.com',
+    iosBundleId: 'com.example.flutterApplication3',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyA7X5jqv0OpU0d8q9VztCWXuWgf2XOt6Dg',
-    appId: '1:53239051223:ios:c61604acbbd95d8f6dd192',
+    appId: '1:53239051223:ios:99a00a0498251fbd6dd192',
     messagingSenderId: '53239051223',
     projectId: 'mobalworld',
     storageBucket: 'mobalworld.appspot.com',
     androidClientId: '53239051223-1d6fmgs9344st4ca8svdugl00uukjou7.apps.googleusercontent.com',
-    iosClientId: '53239051223-j397826bbr0shdmofdpoplnrgllk0tol.apps.googleusercontent.com',
-    iosBundleId: 'com.example.mobalworld.RunnerTests',
+    iosClientId: '53239051223-oag3n90kg4f26vq1qlo9kpkuir2ljppf.apps.googleusercontent.com',
+    iosBundleId: 'com.example.flutterApplication3.RunnerTests',
   );
 }
