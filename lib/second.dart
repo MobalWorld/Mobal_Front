@@ -5,6 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
+
+// second.dart => 눌렀을때 빨간색 표시나는 페이지
 class Second extends StatefulWidget {
   const Second({super.key});
 

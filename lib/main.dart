@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/UI/Toung.dart';
 import 'package:flutter_application_3/second.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
+import 'UI/group_select.dart';
 import 'UI/storagebox_btn.dart';
 
 void main() => runApp(MyApp());
@@ -18,7 +20,9 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: OrientationBuilder( //회전가능하게 하는 기능
           builder: (context, orientation) {
-            return storagebox();
+            // return storagebox(); //보관함으로 이동
+            // return grouptselect(); //살짝메인-그룹 리스트로 이동
+            return toungpage(); //텅 페이지로 이동
           },
         ),
       ),
