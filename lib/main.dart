@@ -35,6 +35,7 @@ class _ChangeColorState extends State<ChangeColor> {
   final beige = Color(0xffFFF8E8);
   final darkTextColor = Color(0xff1F1A3D);
 
+  //button을 위젯화 - 만듦
   Widget getButton({
     required String hint,
   }) {
