@@ -9,7 +9,17 @@ class grouptselect extends StatefulWidget {
   State<grouptselect> createState() => _grouptselectState();
 }
 
+// enum MenuType {
+//   edit,
+//   delete
+// }
+
+
 class _grouptselectState extends State<grouptselect> {
+
+  // ... 버튼 구현할것
+  //late MenuType _selection;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,38 +33,54 @@ class _grouptselectState extends State<grouptselect> {
             backgroundColor: Colors.white,
             //elevation: 0.3, // appbar 그림자 설정1
             //leading 가장 좌측 -> 회원 프로필 이미지 삽입
-            leading: Row(
+            leading: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CircleAvatar(
-                  backgroundColor: Colors.white,
-                  backgroundImage: AssetImage('assets/peng2.jpg'),
-                  radius: 20, //프로필 사진 원 사이즈 -> 30으로 고정
-                ),
-                //회원 사진과 회원 인사 사이 여백
-                SizedBox(
-                  width: 0.02.sh,
-                ),
-                //나중에 회원 이름 db에서 불러와서 넣기
-                Text("안녕하세요 남극펭귄님",
-                  style:TextStyle(
-                    fontWeight: FontWeight.w900,
-                    fontSize: 20,
-                    color: Colors.black,
-                  ),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.white,
+                      backgroundImage: AssetImage('assets/peng2.jpg'),
+                      radius: 20, //프로필 사진 원 사이즈 -> 30으로 고정
+                    ),
+                    //회원 사진과 회원 인사 사이 여백
+                    SizedBox(
+                      width: 0.02.sh,
+                    ),
+                    //나중에 회원 이름 db에서 불러와서 넣기
+                    Text("안녕하세요 남극펭귄님",
+                      style:TextStyle(
+                        fontWeight: FontWeight.w900,
+                        fontSize: 20,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
+
+            //앱바에서 가장 우측에 위치
             actions:[
-              IconButton(
-                icon: Icon(
-                  Icons.notifications, // 아이콘 지정 -> 알람 아이콘
-                  size: 30.sp,
-                ),
-                onPressed: () {},
-                color: Colors.black,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                // children: [
+                //   PopupMenuButton<MenuType>(
+                //     icon: Icon(Icons.notifications,
+                //       size: 30.sp,),
+                //     onSelected: (MenuType  result) {
+                //       setState(() {
+                //         _selection = result;
+                //       });
+                //     }, itemBuilder: (BuildContext context) =>
+                //                       MenuType.values.map((value) =>
+                //                           PopupMenuItem(value: value,
+                //                           child: Text(value.toString()),
+                //                           )).toList(),
+                //   ),
+                // ],
               ),
             ],
-
           ),
         ),
 
@@ -66,9 +92,9 @@ class _grouptselectState extends State<grouptselect> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-             height: 0.05.sh,
-            ),
+            // SizedBox(
+            //  height: 0.05.sh,
+            // ),
             Row(
               children: [
                 //프로필 이미지 -동그란 모양에 사진 넣어주기
@@ -87,7 +113,7 @@ class _grouptselectState extends State<grouptselect> {
                     Text("23-1 한동 위로 팀",
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 18,
+                      fontSize: 16,
                       fontWeight: FontWeight.w700,
                     ),
                     ),
@@ -117,6 +143,62 @@ class _grouptselectState extends State<grouptselect> {
             ),
             SizedBox(
                 height: 0.005.sh, // 이것보다 좋은 여백 있으면 바꾸기 -> 자체 패딩값 적용되어있어서
+            ),
+            //여기 각 그룹 사이에 구분 선(Divider) 넣어줄거임
+            Divider(
+              thickness: 0.3,
+              color: Colors.grey[800],
+            ),
+
+            ////////확인용 새로운 항목 추가/////////
+            Row(
+              children: [
+                //프로필 이미지 -동그란 모양에 사진 넣어주기
+                CircleAvatar(
+                  backgroundColor: Colors.white,
+                  backgroundImage: AssetImage('assets/peng2.jpg'),
+                  radius: 30, //프로필 사진 원 사이즈 -> 30으로 고정
+                ),
+                //아래 : 프로필 사진이랑 그룹 이름 사이의 여백임
+                SizedBox(
+                  width: 0.02.sh,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("펭구를 사랑하는 사람들의 모임",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    Text("참여자 : 25명",
+                      style: TextStyle(
+                        color: Colors.black54,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ), //참여자 명수 변수 받아서 넣어줘야함
+                  ],
+                ),
+                //... 버튼 제작
+                Row(
+                  //이거 ...버튼 맨 끝으로 정렬시키기
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    // SizedBox( //위 아래 별로 어떻게 맞추지?
+                    //   width: 0.1.sh, // 이것보다 좋은 여백 있으면 바꾸기 -> 자체 패딩값 적용되어있어서
+                    // ),
+                    IconButton(onPressed:() {},
+                      //누르면 창 뜨게 하기
+                      icon: Icon(Icons.more_horiz),),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 0.005.sh, // 이것보다 좋은 여백 있으면 바꾸기 -> 자체 패딩값 적용되어있어서
             ),
             //여기 각 그룹 사이에 구분 선(Divider) 넣어줄거임
             Divider(
