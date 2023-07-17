@@ -1,32 +1,42 @@
+
+// 민영이가 만든 클래스 -> 보관함 페이지
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/UI/storagebox_btn.dart';
-import 'package:flutter_application_3/main.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-class Second extends StatefulWidget {
-  const Second({super.key});
+import '../second.dart';
+
+class storagebox extends StatefulWidget {
+  const storagebox ({Key? key}) : super(key: key);
 
   @override
-  State<Second> createState() => _SecondState();
+  State<storagebox> createState() => _storageboxState();
 }
 
-class _SecondState extends State<Second> {
-  final beige = Color.fromARGB(255, 239, 3, 38);
+class _storageboxState extends State<storagebox> {
+  // final beige = Color(0xffFFF8E8);
+  // FCCAA9
+  final beige = Color(0xffFCCAA9);
   final darkTextColor = Color(0xff1F1A3D);
 
-  Widget getButton({required String hint}) {
+  //보관함에서만 작동하는 보관함 박스 button을 위젯화 - 만듦
+  Widget getButton({
+    required String hint,
+  }) {
     return Container(
       width: double.infinity,
-      height: Getheight(0.2.sh),
+      height: Getheight(0.15.sh),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.to(Second());
+        },
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(beige),
           foregroundColor: MaterialStateProperty.all(Colors.black),
           padding:
-              MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 14.h)),
+          MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 14.h)),
           textStyle: MaterialStateProperty.all(TextStyle(
             fontSize: FontSize(14.sp),
             fontWeight: FontWeight.w700,
@@ -38,7 +48,7 @@ class _SecondState extends State<Second> {
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius:
-                  BorderRadius.circular(20.0), // 원하는 모서리의 둥근 정도를 조정하세요
+              BorderRadius.circular(20.0), // 원하는 모서리의 둥근 정도를 조정하세요
             ),
           ),
         ),
@@ -72,9 +82,7 @@ class _SecondState extends State<Second> {
               Icons.airline_seat_legroom_normal_sharp,
               size: 30.sp,
             ),
-            onPressed: () {
-              Get.to(storagebox());
-            },
+            onPressed: () {},
             color: Colors.black,
           ),
           elevation: 0.0,
@@ -82,7 +90,7 @@ class _SecondState extends State<Second> {
         body: SafeArea(
           child: SingleChildScrollView(
             padding:
-                EdgeInsets.symmetric(horizontal: 0.03.sh, vertical: 0.02.sh),
+            EdgeInsets.symmetric(horizontal: 0.03.sh, vertical: 0.02.sh),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -91,9 +99,15 @@ class _SecondState extends State<Second> {
                   backgroundImage: AssetImage('assets/walrus.png'),
                   radius: 40,
                 ),
+                SizedBox(
+                  height: 0.015.sh,
+                ),
                 Text(
                   '바다 코끼리',
                   style: TextStyle(color: Colors.black, fontSize: 20),
+                ),
+                SizedBox(
+                  height: 0.03.sh,
                 ),
                 SizedBox(
                   height: 0.03.sh,
