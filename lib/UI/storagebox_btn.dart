@@ -18,7 +18,7 @@ class storagebox extends StatefulWidget {
 class _storageboxState extends State<storagebox> {
   // final beige = Color(0xffFFF8E8);
   // FCCAA9
-  final beige = Color(0xffFCCAA9);
+  final beige = Color(0xff96B0E5);
   final darkTextColor = Color(0xff1F1A3D);
 
   //보관함에서만 작동하는 보관함 박스 button을 위젯화 - 만듦
@@ -27,7 +27,8 @@ class _storageboxState extends State<storagebox> {
   }) {
     return Container(
       width: double.infinity,
-      height: Getheight(0.15.sh),
+      // 버튼 높이
+      height: Getheight(0.02.sh),
       child: ElevatedButton(
         onPressed: () {
           Get.to(Second());
@@ -35,10 +36,10 @@ class _storageboxState extends State<storagebox> {
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(beige),
           foregroundColor: MaterialStateProperty.all(Colors.black),
-          padding:
+          padding: //패딩
           MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 14.h)),
           textStyle: MaterialStateProperty.all(TextStyle(
-            fontSize: FontSize(14.sp),
+            fontSize: FontSize(15.sp),
             fontWeight: FontWeight.w700,
           )),
           side: MaterialStateProperty.all(BorderSide(
@@ -48,7 +49,7 @@ class _storageboxState extends State<storagebox> {
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius:
-              BorderRadius.circular(20.0), // 원하는 모서리의 둥근 정도를 조정하세요
+              BorderRadius.circular(100.0), // 원하는 모서리의 둥근 정도를 조정하세요
             ),
           ),
         ),
@@ -59,16 +60,16 @@ class _storageboxState extends State<storagebox> {
 
   //버튼의 임계값
   double Getheight(double size) {
-    if (size < 150) {
-      size = 150;
+    if (size < 100) {
+      size = 100;
     }
     return size;
   }
 
   //fontsize의 임계값
   double FontSize(double size) {
-    if (size > 20) size = 20;
-    return 20;
+    if (size > 30) size = 30;
+    return size;
   }
 
   @override
@@ -110,7 +111,8 @@ class _storageboxState extends State<storagebox> {
                   height: 0.03.sh,
                 ),
                 SizedBox(
-                  height: 0.03.sh,
+                  // 바다 코끼리와 위로 보관함 사이 여백 박스
+                  height: 0.1.sh,
                 ),
                 getButton(hint: "위로 보관함"),
                 SizedBox(
