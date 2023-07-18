@@ -1,5 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+
+// 알림 페이지 추가해야할 기능
+// 해당 알림 누르면 해당 고민글로 이동
+// 시간 며칠 지나면 알림 페이지에서 과거 알림 지울건지는 백앤드 맘대로 하세요
+
+
 
 class alarmpage extends StatefulWidget {
   const alarmpage({super.key});
@@ -22,26 +30,133 @@ class _alarmpageState extends State<alarmpage> {
           backgroundColor: Colors.white,
 
           //뒤로가기 버튼
-          leading: IconButton(
-            color: Colors.black,
-            icon: Icon(Icons.arrow_back_ios_new),
-            onPressed: () {},
+          leading: Row(
+            children: [
+              IconButton(
+                color: Colors.black,
+                icon: Icon(Icons.arrow_back_ios_new),
+
+                // 추후에 이동 기능 추가하기
+                onPressed: () {},
+              ),
+            ],
           ),
           centerTitle: true,
-          title: Row(
-             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              //나중에 회원 이름 data 넣기
-              Text("알림",
+          title: Text("알림",
+                 textAlign: TextAlign.center,
                 style:TextStyle(
                   fontWeight: FontWeight.w900,
-                  fontSize: 24,
+                  fontSize: 25,
                   color: Colors.black, ),
-              ),],
+          ),
+           ),),
+
+
+      /////body - 리스트 시작
+      body: ListView(
+        padding: //패딩 통일해서 위젯으로 사용하자는 말 나왓엇음, 어떻게 할건지 상의하기
+        EdgeInsets.symmetric(
+            horizontal: 0.005.sh, //일단 내가 임의로 바꿈
+            vertical: 0.04.sh
+        ),
+
+        children: <Widget>[ SingleChildScrollView( // 스크롤 가능하게
+          child:Column(
+            children: [
+
+              // 알림 1st
+              ListTile(
+                dense: false,
+                // 고민 글 제목 + 에 대한 위로가 도착
+                title: Text("행복하고 싶다에 대한 위로가 도착했습니다.",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 13,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+                // 고민글이 작성된 해당 페이지 이름
+                subtitle: Text("23-1 한동 위로 팀",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+
+                // 알림 날짜 작성 - 3번째 줄
+
+                visualDensity: VisualDensity( // listview에서 각 항목 들의 여백
+                    vertical: 0,
+                    horizontal: 0),
+
+                // 맨 앞에 오는 그룹의 프로필 이미지 (고민 글이 작성된 그룹)
+                leading: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  backgroundImage: AssetImage('assets/hgu.png'),
+                  radius: 25, //프로필 사진 원 사이즈 -> 30으로 고정
+                ),
+
+              ),
+              // 각 팀 타일 사이에 구분선 추가
+              Divider(
+                thickness: 2,
+              ),
+
+              //리스트 타일 사이에 여백 한번 만들어봄
+              SizedBox(
+                height: 4,
+              ),
+
+
+
+              // 알림 2nd
+              ListTile(
+                dense: false,
+                // 고민 글 제목 + 에 대한 위로가 도착
+                title: Text("푸바오 없인 못살아에 대한 위로가 도착했습니다.",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 13,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+                // 고민글이 작성된 해당 페이지 이름
+                subtitle: Text("푸바오 사랑해 팀", //팀이라는 글자 빼도 됨, 편한대로
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+
+                // 알림 날짜 작성 - 3번째 줄
+
+                visualDensity: VisualDensity( // listview에서 각 항목 들의 여백
+                    vertical: 0,
+                    horizontal: 0),
+
+                // 맨 앞에 오는 그룹의 프로필 이미지 (고민 글이 작성된 그룹)
+                leading: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  backgroundImage: AssetImage('assets/fubao.webp'),
+                  radius: 25, //프로필 사진 원 사이즈 -> 30으로 고정
+                ),
+
+              ),
+
+              // 각 팀 타일 사이에 구분선 추가
+              Divider(
+                thickness: 2,
+              ),
+            ],
           ),
 
-          // 우측 아이콘 - 알림 기능
-           ),),
+          // 새로운 리스트 항목 넣기
+
+
+        ),
+        ],),
     );
   }
 }
