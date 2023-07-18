@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/UI/Toung.dart';
 import 'package:flutter_application_3/appbar%20page/alarm.dart';
+import 'package:flutter_application_3/appbar%20page/storage.dart';
 import 'package:flutter_application_3/second.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
             // return storagebox(); //보관함으로 이동
             // return grouptselect(); //살짝메인-그룹 리스트로 이동
             // return toungpage(); //텅 페이지로 이동
-             return alarmpage(); //알림 페이지로 이동
+            // return alarmpage(); //알림 페이지로 이동
+            return storagepage();
 
           },
         ),

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 // 알림 페이지 추가해야할 기능
+// title과 subtitle간의 간격 조절 필요
 // 해당 알림 누르면 해당 고민글로 이동
 // 시간 며칠 지나면 알림 페이지에서 과거 알림 지울건지는 백앤드 맘대로 하세요
 
@@ -76,13 +77,26 @@ class _alarmpageState extends State<alarmpage> {
                   ),
                 ),
                 // 고민글이 작성된 해당 페이지 이름
-                subtitle: Text("23-1 한동 위로 팀",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w700,
-                  ),
+                subtitle: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("23-1 한동 위로 팀",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    Text("2023/07/18",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w200,
+                      ),
+                    ),
+                  ],
                 ),
+
 
                 // 알림 날짜 작성 - 3번째 줄
 
@@ -122,12 +136,24 @@ class _alarmpageState extends State<alarmpage> {
                   ),
                 ),
                 // 고민글이 작성된 해당 페이지 이름
-                subtitle: Text("푸바오 사랑해 팀", //팀이라는 글자 빼도 됨, 편한대로
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w700,
-                  ),
+                subtitle:Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("푸바오 사랑해 팀",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    Text("2023/07/15",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w200,
+                      ),
+                    ),
+                  ],
                 ),
 
                 // 알림 날짜 작성 - 3번째 줄
