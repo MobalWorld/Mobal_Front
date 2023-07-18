@@ -66,6 +66,7 @@ flutter:
     - assets/peng1.jpg
     - assets/peng2.jpg
     - assets/hgu.png
+    - assets/fubao.webp
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
