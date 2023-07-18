@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_3/UI/Toung.dart';
 import 'package:flutter_application_3/appbar%20page/alarm.dart';
 import 'package:flutter_application_3/appbar%20page/storage.dart';
+import 'package:flutter_application_3/appbar%20page/temporary_storage.dart';
+import 'package:flutter_application_3/appbar%20page/worry_storage.dart';
 import 'package:flutter_application_3/second.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -26,7 +28,9 @@ class MyApp extends StatelessWidget {
             // return grouptselect(); //살짝메인-그룹 리스트로 이동
             // return toungpage(); //텅 페이지로 이동
             // return alarmpage(); //알림 페이지로 이동
-            return storagepage();
+            // return storagepage(); //위로 보관함의 리스트로 이동
+            // return temporay_storagepage(); //임시보관함의 리스트로 이동
+            return worry_storagepage(); //고민 보관함의 리스트로 이동
 
           },
         ),
