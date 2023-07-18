@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBB8bN2fhugKeuTZRBNXp81x9FFIkGWqAs',
-    appId: '1:53239051223:android:68118880d83594096dd192',
+    appId: '1:53239051223:android:643004ab14a8a5586dd192',
     messagingSenderId: '53239051223',
     projectId: 'mobalworld',
     storageBucket: 'mobalworld.appspot.com',
@@ -63,7 +63,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyA7X5jqv0OpU0d8q9VztCWXuWgf2XOt6Dg',
-    appId: '1:53239051223:ios:7c4ac599730540756dd192',
+    appId: '1:53239051223:ios:c03259bc7387034a6dd192',
     messagingSenderId: '53239051223',
     projectId: 'mobalworld',
     storageBucket: 'mobalworld.appspot.com',
@@ -74,7 +74,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyA7X5jqv0OpU0d8q9VztCWXuWgf2XOt6Dg',
-    appId: '1:53239051223:ios:99a00a0498251fbd6dd192',
+    appId: '1:53239051223:ios:2f7161269cd68d0f6dd192',
     messagingSenderId: '53239051223',
     projectId: 'mobalworld',
     storageBucket: 'mobalworld.appspot.com',
